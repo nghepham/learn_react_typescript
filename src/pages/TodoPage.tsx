@@ -1,5 +1,5 @@
-import { Divider } from 'antd'
 import React from 'react'
+import { Divider } from 'antd'
 import Filters from '../components/Filters'
 import TodoList from '../components/TodoList'
 

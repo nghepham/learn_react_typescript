@@ -28,20 +28,21 @@ export default function TodoList() {
       completed: false,
     }))
     setTodoName('');
-    setPriority('');
+    setPriority('Medium');
   };
 
   return (
     <Row style={{ height: 'calc(100% - 40px)' }}>
       <Col span={24} style={{ height: 'calc(100% - 40px)', overflowY: 'auto' }}>
         {todoList.map((todo: TodoProps) => (
-          <Todo
-            key={todo.id}
+          <div key={todo.id}>
+            <Todo
             id={todo.id}
             name={todo.name}
             priority={todo.priority}
             completed={todo.completed}
           />
+          </div>
         ))}
       </Col>
       <Col span={24}>

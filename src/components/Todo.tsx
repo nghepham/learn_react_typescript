@@ -10,7 +10,7 @@ const priorityColorMapping = {
   Low: 'gray',
 };
 
-function Todo({ id, name, priority, completed }: TodoProps) {
+function Todo({ id, name, priority, completed}: TodoProps) {
   const [checked, setChecked] = useState(completed)
   const dispatch = useAppDispatch();
 
@@ -19,7 +19,10 @@ function Todo({ id, name, priority, completed }: TodoProps) {
     dispatch(toggleStatus(id))
   }
 
-  var color = Object.getOwnPropertyDescriptor(priorityColorMapping, priority) as string;
+  var {value} = Object.getOwnPropertyDescriptor(priorityColorMapping, priority) as PropertyDescriptor;
+
+  
+  console.log({value});
 
   return (
     <Row
@@ -32,7 +35,7 @@ function Todo({ id, name, priority, completed }: TodoProps) {
       <Checkbox checked={checked} onChange={toggleCheckbox}>
         {name}
       </Checkbox>
-      <Tag color={color} style={{ margin: 0 }}>
+      <Tag color={value || 'blue'} style={{ margin: 0 }}>
         {priority}
       </Tag>
     </Row>
