@@ -51,7 +51,7 @@ function App() {
               </HeaderLayout>
             }
           />
-          <Route path="/upload" element={<Search />} />
+          <Route path="/search" element={<Search />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
